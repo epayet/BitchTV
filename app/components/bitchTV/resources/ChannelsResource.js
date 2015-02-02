@@ -1,9 +1,9 @@
 angular.module('BitchTV').factory('ChannelsResource',
     function(ResourceFactory, Config) {
         var resourcesInfo = {
-            route : "/channels",
+            route : "/channels.json",
             idField : 'id',
-            apiUrl : 'api/channels.json'
+            apiUrl : 'api'
         };
         return ResourceFactory.createResource(resourcesInfo);
     });

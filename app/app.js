@@ -8,6 +8,8 @@ angular.module('BitchTV', [
         $routeProvider.when('/channels', {templateUrl: 'views/channels.html'});
         $routeProvider.otherwise({redirectTo: '/channels'});
     })
-    .constant('Constants', {});
+    .constant('Constants', {
+        logosPath: "assets/img/logos/"
+    });
 
 angular.module('BitchTV.plugins', []);
