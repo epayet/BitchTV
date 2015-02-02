@@ -23,10 +23,10 @@ body {
     padding-top: 50px;
 }
 
-/*@font-face {*/
-    /*font-family: "Raleway";*/
-    /*src: url(../fonts/Raleway-Regular.otf) format("truetype");*/
-/*}*/
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway-Regular.otf) format("truetype");
+}
 
 h1, h2, h3, h4, a{
     font-family: "Raleway";

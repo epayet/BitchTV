@@ -21,6 +21,7 @@ var paths = {
     //specify order, bug if put randomly
     vendorScripts: ["build/lib/jquery.js", "build/lib/angular.js", "build/lib/**/*.js"],
     vendorFonts: ["build/lib/**/*.eot", "build/lib/**/*.svg", "build/lib/**/*.ttf", "build/lib/**/*.woff", "build/lib/**/*.woff2"],
+    appFonts: ["app/fonts/**/*"],
     appCss: "app/**/*.css",
     vendorCss: ["build/lib/**/*.css"]
 };
@@ -38,7 +39,7 @@ gulp.task("default", function(callback) {
 gulp.task("bower", ["bower-files", "vendor", "clean"]);
 
 //build everything
-gulp.task("build:web", ["js:app", "bower" , "css:app", "copy"]);
+gulp.task("build:web", ["js:app", "bower" , "css:app", "copy", "fonts:app"]);
 
 gulp.task("build:mobile", ["build:web"], function() {
     return gulp.src('dist/**').pipe(gulp.dest('mobile/www'));
@@ -83,7 +84,11 @@ gulp.task("css:vendor", ["bower-files"], function() {
 
 //Copy the vendor fonts in the public css folder (bootstrap needs it)
 gulp.task("fonts:vendor", ["bower-files"], function() {
-    return gulp.src(paths.vendorFonts).pipe(gulp.dest("dist/fonts"))
+    return gulp.src(paths.vendorFonts).pipe(gulp.dest("dist/fonts"));
+});
+
+gulp.task("fonts:app", ["bower-files"], function() {
+    return gulp.src(paths.appFonts).pipe(gulp.dest("dist/fonts"));
 });
 
 //Vendor stuff (bower)
@@ -103,7 +108,9 @@ gulp.task("clean", ["vendor"], function() {
 gulp.task("copy", function() {
     return es.merge(
         gulp.src("app/**/*.html").pipe(gulp.dest("dist")),
-        gulp.src("app/assets/**").pipe(gulp.dest("dist/assets"))
+        gulp.src("app/assets/**").pipe(gulp.dest("dist/assets")),
+        gulp.src("app/api/**/*.json").pipe(gulp.dest("dist/api")),
+        gulp.src("favicon.ico").pipe(gulp.dest("dist"))
     );
 });
 
