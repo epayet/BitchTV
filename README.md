@@ -17,3 +17,19 @@ The api has been written to show only 19 channels. But it is enough to do the pr
 1. All channels
 2. Programming
 3. Now / morning / afternoon / nights
+
+### Instructions
+
+Necessary global commands : `npm install -g gulp cordova`
+
+To run the web application:
+
+    npm install
+    bower install
+    gulp
+
+To run on android, in the mobile directory:
+
+    gulp build:mobile
+    cordova platform add android
+    cordova run android

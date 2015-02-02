@@ -1,4 +1,6 @@
-<div ng-repeat="channel in channels" class="col-sm-6 col-md-4 channel text-center" id="0">
-    <h3>{{channel.displayname}}</h3>
-    <img ng-src="{{getChannelLogoSrc(channel)}}"><hr>
+<div ng-repeat="channel in channels" class="col-sm-6 col-md-4 channel text-center" ng-click="redirectToChannel(channel.id)">
+    <!--<a href="#/channel/{{channel.id}}">-->
+        <h3>{{channel.displayname}}</h3>
+        <img ng-src="{{getChannelLogoSrc(channel)}}"><hr>
+    <!--</a>-->
 </div>

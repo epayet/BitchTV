@@ -6,6 +6,7 @@ angular.module('BitchTV', [
 ])
     .config(function($routeProvider) {
         $routeProvider.when('/channels', {templateUrl: 'views/channels.html'});
+        $routeProvider.when('/channel/:channelId', {templateUrl: 'views/channel.html', controller: 'DefaultController'});
         $routeProvider.otherwise({redirectTo: '/channels'});
     })
     .constant('Constants', {
@@ -13,3 +14,9 @@ angular.module('BitchTV', [
     });
 
 angular.module('BitchTV.plugins', []);
+
+angular.module('BitchTV').controller('DefaultController',
+    function ($scope, $routeParams) {
+        $scope.$routeParams = $routeParams;
+    }
+);

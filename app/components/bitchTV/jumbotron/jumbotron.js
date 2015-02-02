@@ -2,9 +2,8 @@ angular.module('BitchTV').directive('bitchTvJumbotron', function () {
     return {
         restrict: 'E',
         templateUrl: 'components/bitchTV/jumbotron/jumbotron.html',
+        scope: { title: '@', image: '@'},
         link: function(scope, element, attrs) {
-            scope.image = attrs.image;
-            scope.title = attrs.title;
             scope.date = currentDate();
         }
     };
