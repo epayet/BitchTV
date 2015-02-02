@@ -1,0 +1,25 @@
+/* app css stylesheet */
+
+body {
+    padding-top: 50px;
+}
+#content {
+    padding: 15px 15px;
+}
+
+.group-list {
+    padding: 10px;
+}
+
+.group-list:hover {
+    background-color: beige;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+/*TODO Temporary Workaround for black overlay behond modal in last version of bootstrap*/
+.modal-backdrop {
+    bottom: 0;
+}
