@@ -38,7 +38,13 @@ gulp.task("default", function(callback) {
 gulp.task("bower", ["bower-files", "vendor", "clean"]);
 
 //build everything
-gulp.task("build", ["js:app", "bower" , "css:app", "copy"]);
+gulp.task("build:web", ["js:app", "bower" , "css:app", "copy"]);
+
+gulp.task("build:mobile", ["build:web"], function() {
+    return gulp.src('dist/**').pipe(gulp.dest('mobile/www'));
+});
+
+gulp.task("build", ["build:web" , "build:mobile"]);
 
 //Minify app js files
 gulp.task("js:app", function() {
