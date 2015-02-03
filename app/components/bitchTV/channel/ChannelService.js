@@ -1,4 +1,4 @@
-angular.module('BitchTV').factory('ChannelService', function (Constants) {
+angular.module('BitchTV').factory('ChannelService', function (ProgramService, ChannelsResource, Constants) {
     return {
         getChannelLogoSrc: function(channel) {
             if(channel && channel.icon) {
@@ -6,6 +6,15 @@ angular.module('BitchTV').factory('ChannelService', function (Constants) {
                 var logoImageName = split[split.length - 1];
                 return Constants.logosPath + logoImageName;
             }
+        },
+
+        get: function(channelId, callback) {
+            ChannelsResource.get({id: channelId}, function (channel) {
+                ProgramService.get(channelId, function (programs) {
+                    channel.programs = programs;
+                    callback(channel);
+                });
+            });
         }
     };
 });

@@ -1,1 +1,21 @@
 <bitch-tv-jumbotron image="{{getChannelLogoSrc(channel)}}" title="{{channel.displayname}}"></bitch-tv-jumbotron>
+
+<div class="col-sm-6 col-md-4 col-xs-12 programs">
+    <div class="col-md-4 col-sm-4 col-xs-4 programs ">
+        <img src="http://programme-tv.premiere.fr/var/t7j/images/26584612.jpg">
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8 programs ">
+        <h5>André Le Nôtre, le jardinier de Louis XIV </h5>
+        <p class="category" style="display: none;">Documentaire,Culture</p>
+        <p class="text-muted"><strong>Start: </strong>07/01/2015 at 00:10</p>
+        <p class="text-muted"><strong>Fin: </strong>07/01/2015 at 01:10</p>
+        <p class="description" style="display: none;">
+            Comment Le Nôtre, maître d'oeuvre du parc de Versailles, a inventé l'art du paysage au XVIIe siècle : immersion dans son processus de création.
+        </p>
+        <button class="btn btn-success btn-xs">Plus d'infos</button>
+    </div>
+</div>
+
+<div ng-repeat="program in channel.programs">
+    {{program.title}}
+</div>
