@@ -16,7 +16,7 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
 
             scope.$watch('program', function (newValue) {
                 if(newValue) {
-                    scope.program.date = getDayMonthYearByPrograms(scope.program.start);
+                    scope.program.date = DateUtilService.getDayMonthYearByPrograms(scope.program.start);
                     scope.program.hours = {
                         start : DateUtilService.getHoursMinutesByPrograms(scope.program.start),
                         stop : DateUtilService.getHoursMinutesByPrograms(scope.program.stop)
