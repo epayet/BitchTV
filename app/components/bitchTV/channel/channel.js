@@ -7,7 +7,6 @@ angular.module('BitchTV').directive('bitchTvChannel', function (ChannelsResource
             //scope.channel = ChannelsResource.get({id: channelId});
             ChannelService.get(channelId, function(channel) {
                 scope.channel = channel;
-                console.log(channel);
             });
             scope.getChannelLogoSrc = ChannelService.getChannelLogoSrc;
         }

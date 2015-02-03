@@ -2,7 +2,8 @@ angular.module('BitchTV', [
     'ngRoute',
     'ngResource',
     'ui.bootstrap',
-    'BitchTV.plugins'
+    'BitchTV.plugins',
+    'BitchTV.filters'
 ])
     .config(function($routeProvider) {
         $routeProvider.when('/channels', {templateUrl: 'views/channels.html'});
@@ -14,6 +15,7 @@ angular.module('BitchTV', [
     });
 
 angular.module('BitchTV.plugins', []);
+angular.module('BitchTV.filters', []);
 
 angular.module('BitchTV').controller('DefaultController',
     function ($scope, $routeParams) {

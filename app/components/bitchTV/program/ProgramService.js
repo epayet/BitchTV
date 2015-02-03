@@ -12,6 +12,14 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource) 
                 }
                 callback(channelPrograms);
             });
+        },
+
+        getProgramImgSrc: function(program, channelIcon) {
+            if(program.icon)
+                return program.icon.src;
+            else {
+                return channelIcon;
+            }
         }
     };
 

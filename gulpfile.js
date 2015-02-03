@@ -125,10 +125,11 @@ gulp.task("serve", function() {
     });
 });
 
+//Here don't watch, assets: too much
 gulp.task("watch", function() {
     gulp.watch(paths.appCss, ["css:app", reload]);
     gulp.watch(paths.appScripts, ["js:app", reload]);
-    gulp.watch(["app/**/*.html", "app/assets/**"], ["copy", reload]);
+    gulp.watch(["app/**/*.html"], ["copy", reload]);
 });
 
 function specifyConfig(appScripts, environment) {
