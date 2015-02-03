@@ -1,8 +1,8 @@
-angular.module('BitchTV').factory('ProgramService', function (ProgramsResource) {
+angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, DateUtilService) {
     var programs;
 
     return {
-        get: function(channelId, callback) {
+        getForChannel: function(channelId, callback) {
             getPrograms(function (programs) {
                 var channelPrograms = [];
                 for(var i=0; i<programs.length; i++) {
@@ -11,6 +11,29 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource) 
                     }
                 }
                 callback(channelPrograms);
+            });
+        },
+
+        getForDate: function(dateCode, callback) {
+            var dateInfo = DateUtilService.getDateInfoForCode(dateCode);
+            var currentDate = DateUtilService.currentDate();
+            var currentTime = DateUtilService.currentTime();
+            var programsForDate = [];
+
+            getPrograms(function (programs) {
+                for(var i=0; i<programs.length; i++) {
+                    var dateNow = DateUtilService.getDayMonthYearByPrograms(programs[i].start);
+                    var timeStart = DateUtilService.getHoursMinutesByPrograms(programs[i].start);
+                    var timeStop = DateUtilService.getHoursMinutesByPrograms(programs[i].stop);
+
+                    if(dateCode == 'now' && currentDate == dateNow && timeStart <= currentTime && timeStop >= currentTime) {
+                        programsForDate.push(programs[i]);
+                    }
+                    else if(currentDate == dateNow && timeStart >= dateInfo.startTime && timeStop <= dateInfo.stopTime && timeStart <= dateInfo.stopTime) {
+                        programsForDate.push(programs[i]);
+                    }
+                }
+                callback(programsForDate);
             });
         },
 
