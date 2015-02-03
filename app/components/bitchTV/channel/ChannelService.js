@@ -10,7 +10,7 @@ angular.module('BitchTV').factory('ChannelService', function (ProgramService, Ch
 
         get: function(channelId, callback) {
             ChannelsResource.get({id: channelId}, function (channel) {
-                ProgramService.get(channelId, function (programs) {
+                ProgramService.getForChannel(channelId, function (programs) {
                     channel.programs = programs;
                     callback(channel);
                 });
