@@ -15,9 +15,9 @@
     /*background-color: beige;*/
 /*}*/
 
-/*.clickable:hover {*/
-    /*cursor: pointer;*/
-/*}*/
+.clickable:hover {
+    cursor: pointer;
+}
 
 body {
     padding-top: 50px;
