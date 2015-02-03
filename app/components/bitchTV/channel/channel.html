@@ -1,6 +1,6 @@
 <bitch-tv-jumbotron image="{{getChannelLogoSrc(channel)}}" title="{{channel.displayname}}"></bitch-tv-jumbotron>
 
-<div ng-repeat="program in channel.programs">
+<div ng-repeat="program in channel.programs | limitTo: 20">
     <bitch-tv-program program="program" channel-icon="{{getChannelLogoSrc(channel)}}"></bitch-tv-program>
 </div>
 

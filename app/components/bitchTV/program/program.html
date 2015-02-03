@@ -1,15 +1,21 @@
-<div class="col-sm-6 col-md-4 col-xs-12 programs programs-block">
-    <div class="col-md-4 col-sm-4 col-xs-4 programs ">
+<div class="col-sm-6 col-md-4 col-xs-12 programs programs-block" ng-click="openProgramDetailsModal()">
+    <div class="col-md-4 col-sm-4 col-xs-4 programs-block-left ">
         <img ng-src="{{getProgramImgSrc()}}">
+        <div class="bitch-center">{{program.date}}</div>
+        <!--<div class="bitch-center mega-hour">{{program.hours.start}}</div>-->
     </div>
-    <div class="col-md-8 col-sm-8 col-xs-8 programs ">
-        <h5>{{program.title}}</h5>
+    <div class="col-md-8 col-sm-8 col-xs-8 programs-block-right ">
+        <h4>{{program.title}}</h4>
+        <div class="row">
+            <div class="col-xs-6 bitch-center hours"><strong class="text-muted">From:</strong><br><span class="mega-hour">{{program.hours.start}}</span></div>
+            <div class="col-xs-6 bitch-center hours"><strong class="text-muted">To:</strong><br><span class="mega-hour">{{program.hours.stop}}</span></div>
+<!--        <p class="text-muted"><strong>Start: </strong>{{start}}</p>
+        <p class="text-muted"><strong>End: </strong>{{stop}}</p>-->
+        </div>
         <p class="category" style="display: none">{{program.category | joinBy: ','}}</p>
-        <p class="text-muted"><strong>Start: </strong>{{start}}</p>
-        <p class="text-muted"><strong>End: </strong>{{stop}}</p>
         <p class="description" style="display: none;">
             {{program.description}}
         </p>
-        <button class="btn btn-success btn-xs" ng-click="openProgramDetailsModal()">More info</button>
+        <!--<button class="btn btn-success btn-xs" >More info</button>
     </div>
 </div>

@@ -32,7 +32,7 @@ body {
     margin-bottom: 0px;
 }
 
-h1, h2, h3, h4, a{
+h1, h2, h3, h4, h5, a{
     font-family: "Raleway";
 }
 
@@ -50,17 +50,56 @@ hr {
 }
 
 .programs-block {
-    border-bottom: 1px solid #7D3B91;
-    border-top: 2px solid #EEE;
+    background-image: linear-gradient(rgb(238, 238, 238) 0, rgb(255, 255, 255) 100%);
     padding: 10px;
+}
+
+.programs-block h4 {
+    color: rgb(245, 245, 245);
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 1px;
+    background-image: linear-gradient(to bottom,rgb(60, 60, 60) 0,rgb(99, 22, 124) 100%);
+    margin-top: 0;
+}
+
+.programs-block-left {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.mega-hour {
+    font-size: 20px;
+}
+
+.hours {
+    border-left: 1px solid #555;
+}
+
+.hours:first-child {
+    border-right: 1px solid #555;    
+    border-left: none;    
+}
+
+.programs-block-right {
+    
+}
+
+.bitch-center {
+    text-align: center;
 }
 
 .programs h3 {
     margin-top: 10px;
 }
 
+.programs h5 {
+    font-weight: bold;
+}
+
 .programs img {
-    width: 90px;
+    width: 100%;
 }
 
 

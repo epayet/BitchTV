@@ -17,6 +17,11 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
             scope.$watch('program', function (newValue) {
                 //console.log(newValue);
                 if(newValue) {
+                    scope.program.date = getDayMonthYearByPrograms(scope.program.start);
+                    scope.program.hours = {
+                        start : getHoursMinutesByPrograms(scope.program.start),
+                        stop : getHoursMinutesByPrograms(scope.program.stop)
+                    };
                     scope.start = getDayMonthYearByPrograms(scope.program.start) + ' at ' + getHoursMinutesByPrograms(scope.program.start);
                     scope.stop  = getDayMonthYearByPrograms(scope.program.stop) + ' at ' + getHoursMinutesByPrograms(scope.program.stop);
                 }
