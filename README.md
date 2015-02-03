@@ -20,7 +20,7 @@ The api has been written to show only 19 channels. But it is enough to do the pr
 
 ### Instructions
 
-Necessary global commands : `npm install -g gulp cordova`
+Necessary global commands : `npm install -g gulp cordova nodewebkit`
 
 To run the web application:
 
@@ -33,3 +33,7 @@ To run on android, in the mobile directory:
     gulp build:mobile
     cordova platform add android
     cordova run android
+
+To run with a desktop app:
+
+    nodewebkit .
