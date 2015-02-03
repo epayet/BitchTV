@@ -28,6 +28,10 @@ body {
     src: url(/fonts/Raleway-Regular.otf) format("truetype");
 }
 
+.jumbotron {
+    margin-bottom: 0px;
+}
+
 h1, h2, h3, h4, a{
     font-family: "Raleway";
 }
@@ -41,8 +45,14 @@ hr {
 }
 
 .programs {
-    padding-bottom : 20px;
-    height: 138px;
+    /*padding-bottom : 20px;*/
+    /*height: 138px;*/
+}
+
+.programs-block {
+    border-bottom: 1px solid #7D3B91;
+    border-top: 2px solid #EEE;
+    padding: 10px;
 }
 
 .programs h3 {
