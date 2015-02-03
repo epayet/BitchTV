@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-4 col-xs-12 programs">
+<div class="col-sm-6 col-md-4 col-xs-12 programs programs-block">
     <div class="col-md-4 col-sm-4 col-xs-4 programs ">
         <img ng-src="{{getProgramImgSrc()}}">
     </div>
@@ -6,10 +6,10 @@
         <h5>{{program.title}}</h5>
         <p class="category" style="display: none">{{program.category | joinBy: ','}}</p>
         <p class="text-muted"><strong>Start: </strong>{{start}}</p>
-        <p class="text-muted"><strong>Fin: </strong>{{stop}}</p>
+        <p class="text-muted"><strong>End: </strong>{{stop}}</p>
         <p class="description" style="display: none;">
             {{program.description}}
         </p>
-        <button class="btn btn-success btn-xs" ng-click="openProgramDetailsModal()">Plus d'infos</button>
+        <button class="btn btn-success btn-xs" ng-click="openProgramDetailsModal()">More info</button>
     </div>
 </div>
