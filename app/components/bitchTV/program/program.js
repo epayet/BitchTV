@@ -1,11 +1,13 @@
-angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService) {
+angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, ProgramDetailsModal) {
     return {
         restrict: 'E',
         templateUrl: 'components/bitchTV/program/program.html',
         scope: {program: '=', channelIcon: '@'},
         link: function(scope, element, attrs) {
-            scope.openProgramDetailsModal = function() {
+            var programDetailsModal = new ProgramDetailsModal(scope.program);
 
+            scope.openProgramDetailsModal = function() {
+                programDetailsModal.open();
             };
 
             scope.getProgramImgSrc = function () {

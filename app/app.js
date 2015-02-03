@@ -2,6 +2,7 @@ angular.module('BitchTV', [
     'ngRoute',
     'ngResource',
     'ui.bootstrap',
+    'blockUI',
     'BitchTV.plugins',
     'BitchTV.filters'
 ])
