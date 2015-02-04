@@ -50,7 +50,9 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, 
 
         hasSpecificImage: function(program) {
             return program.icon;
-        }
+        },
+
+        getPrograms: getPrograms
     };
 
     function getPrograms(callback) {
