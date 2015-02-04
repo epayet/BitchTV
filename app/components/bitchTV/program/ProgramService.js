@@ -46,6 +46,10 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, 
             else {
                 return channelIcon;
             }
+        },
+
+        hasSpecificImage: function(program) {
+            return program.icon;
         }
     };
 

@@ -11,6 +11,8 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
                 return ProgramService.getProgramImgSrc(scope.program, scope.channelIcon);
             };
 
+            scope.hasSpecificImage = ProgramService.hasSpecificImage;
+
             scope.$watch('program', function (newValue) {
                 if(newValue) {
                     scope.program.channelLogo = ChannelService.getChannelLogoSrc(scope.program.channel);

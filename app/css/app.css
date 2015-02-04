@@ -98,7 +98,7 @@ hr {
   font-weight: bold;
 }
 
-.programs-block img {
+.programs-block img:not(.hoverChannel) {
   width: 100%;
 }
 
@@ -157,4 +157,12 @@ footer {
     font-weight: bold;
     padding: 5px 15px 0 15px;
     border-top: 1px solid #8C8C8C
+}
+
+.hoverChannel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    opacity: 0.7;
 }
