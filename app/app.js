@@ -24,4 +24,5 @@ angular.module('BitchTV').controller('DefaultController',
     function ($scope, $routeParams) {
         $scope.$routeParams = $routeParams;
     }
+
 );
