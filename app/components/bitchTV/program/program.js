@@ -1,4 +1,4 @@
-angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, ProgramDetailsModal, DateUtilService) {
+angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, ProgramDetailsModal, DateUtilService, ChannelService) {
     return {
         restrict: 'E',
         templateUrl: 'components/bitchTV/program/program.html',
@@ -18,6 +18,7 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
 
             scope.$watch('program', function (newValue) {
                 if(newValue) {
+                    scope.program.channelLogo = ChannelService.getChannelLogoSrc(scope.program.channel);
                     scope.program.date = DateUtilService.getDayMonthYearByPrograms(scope.program.start);
                     scope.program.hours = {
                         start : DateUtilService.getHoursMinutesByPrograms(scope.program.start),
