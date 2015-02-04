@@ -29,6 +29,9 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, 
                     if(dateCode == 'now' && currentDate == dateNow && timeStart <= currentTime && timeStop >= currentTime) {
                         programsForDate.push(programs[i]);
                     }
+                    else if(dateCode == 'tonight' && currentDate == dateNow && timeStart >= dateInfo.startTime) {
+                        programsForDate.push(programs[i]);
+                    }
                     else if(currentDate == dateNow && timeStart >= dateInfo.startTime && timeStop <= dateInfo.stopTime && timeStart <= dateInfo.stopTime) {
                         programsForDate.push(programs[i]);
                     }
