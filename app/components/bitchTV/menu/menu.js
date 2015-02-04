@@ -7,6 +7,11 @@ angular.module('BitchTV').directive('bitchTvMenu', function ($location, $timeout
             scope.search = function(keyword) {
                 $location.path('/search/' + keyword);
             };
+
+            //sale
+            $(".navbar-nav li a").click(function(event) {
+                $(".navbar-collapse").collapse('hide');
+            });
         }
     };
 });
