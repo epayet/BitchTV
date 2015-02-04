@@ -50,47 +50,20 @@ hr {
     margin-top: 0;
 }
 
-.programs-block-left {
-    padding-left: 0;
-    padding-right: 0;
-}
+.programs-block-left { padding-left: 0; padding-right: 0; }
+.programs-block-right { padding-right: 0; }
 
-.programs-block-right {
-    padding-right: 0;
-}
+.mega-hour { font-size: 20px; }
+.hours { border-left: 1px solid #555; }
+.hours:first-child { border-right: 1px solid #555; border-left: none; }
 
-.mega-hour {
-    font-size: 20px;
-}
+.bitch-center { text-align: center; }
 
-.hours {
-    border-left: 1px solid #555;
-}
+.programs h3 { margin-top: 10px; }
 
-.hours:first-child {
-    border-right: 1px solid #555;
-    border-left: none;
-}
+.programs h5 { font-weight: bold; }
 
-.programs-block-right {
-
-}
-
-.bitch-center {
-    text-align: center;
-}
-
-.programs h3 {
-    margin-top: 10px;
-}
-
-.programs h5 {
-    font-weight: bold;
-}
-
-.programs-block img {
-    width: 100%;
-}
+.programs-block img { width: 100%; }
 
 
 /*TODO Temporary Workaround for black overlay behond modal in last version of bootstrap*/
