@@ -31,8 +31,13 @@ hr {
   background-color: #624398;
 }
 
+.glyphicon-search, input#srch-term {
+  color: #624398;
+}
+
 .programs-block {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 2px 2px 2px rgb(166, 166, 166);
