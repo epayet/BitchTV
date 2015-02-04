@@ -1,4 +1,4 @@
-angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, ProgramDetailsModal, DateUtilService, ChannelService) {
+angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, DateUtilService, ChannelService) {
     return {
         restrict: 'E',
         templateUrl: 'components/bitchTV/program/program.html',
@@ -6,11 +6,6 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
         link: function(scope, element, attrs) {
             
             scope.displayInfo = false;
-            var programDetailsModal = new ProgramDetailsModal(scope.program);
-
-            scope.openProgramDetailsModal = function() {
-                programDetailsModal.open();
-            };
 
             scope.getProgramImgSrc = function () {
                 return ProgramService.getProgramImgSrc(scope.program, scope.channelIcon);

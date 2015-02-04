@@ -9,6 +9,24 @@ angular.module('BitchTV').directive('bitchTvProgramList', function (ChannelServi
                 WaitingService.stop();
             });
             scope.getChannelLogoSrc = ChannelService.getChannelLogoSrc;
+            scope.title = getTitle(attrs.dateCode);
         }
     };
+
+    function getTitle(dateCode) {
+        switch (dateCode) {
+            case 'now':
+                return 'Now on TV';
+                break;
+            case 'morning':
+                return 'This morning on TV';
+                break;
+            case 'afternoon':
+                return 'This afternoon on TV';
+                break;
+            case 'tonight':
+                return 'Tonight on TV';
+                break;
+        }
+    }
 });
