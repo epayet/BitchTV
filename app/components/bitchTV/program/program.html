@@ -14,12 +14,11 @@
 <!--        <p class="text-muted"><strong>Start: </strong>{{start}}</p>
         <p class="text-muted"><strong>End: </strong>{{stop}}</p>-->
         </div>
-        <p class="category" style="display: none">{{program.category | joinBy: ','}}</p>
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12">
-        <p class="description" style="">
-            <!--{{program.description}}-->
-            {{program.desc.text}}
-        </p>
+        <span ng-repeat="tag in program.category" class="badge espace">{{tag}}</span>
+    </div>
+    <div class="description col-md-12 col-sm-12 col-xs-12">
+        <p>{{program.desc.text || "No description for that program!"}}<p>
     </div>
 </div>
