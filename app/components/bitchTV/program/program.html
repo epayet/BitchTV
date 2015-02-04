@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="col-md-12 col-sm-12 col-xs-12">
-        <span ng-repeat="tag in program.category" class="badge espace">{{tag}}</span>
+        <span ng-repeat="tag in program.category track by $index" class="badge espace">{{tag}}</span>
     </div>
     <div class="description col-md-12 col-sm-12 col-xs-12">
         <p>{{program.desc.text || "No description for that program!"}}<p>

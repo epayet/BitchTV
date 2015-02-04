@@ -1,4 +1,4 @@
-angular.module('BitchTV').directive('bitchTvSearch', function (SearchService, WaitingService) {
+angular.module('BitchTV').directive('bitchTvSearch', function (SearchService, ChannelService, WaitingService) {
     return {
         restrict: 'E',
         templateUrl: 'components/bitchTV/search/search.html',
@@ -9,6 +9,7 @@ angular.module('BitchTV').directive('bitchTvSearch', function (SearchService, Wa
                 scope.programs = programs;
                 WaitingService.stop();
             });
+            scope.getChannelLogoSrc = ChannelService.getChannelLogoSrc;
         }
     };
 });
