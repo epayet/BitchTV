@@ -36,6 +36,10 @@ hr {
   color: #624398;
 }
 
+.programs-img {
+  padding: 10px;
+}
+
 .programs-block {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -55,27 +59,60 @@ hr {
     margin-top: 0;
 }
 
-.programs-block-last { margin-bottom: 40px; }
-.programs-block.extra-padding:not(.programs-block-last) { margin-bottom: 20px; }
+.programs-block-last {
+  margin-bottom: 40px;
+}
+.programs-block.extra-padding:not(.programs-block-last) {
+  margin-bottom: 20px;
+}
 
-.programs-block-left { padding-left: 0; padding-right: 0; }
-.programs-block-right { padding-right: 0; }
+.programs-block-left {
+  padding-left: 0; padding-right: 0;
+}
 
-.mega-hour { font-size: 20px; }
-.hours { border-left: 1px solid #555; }
-.hours:first-child { border-right: 1px solid #555; border-left: none; }
+.programs-block-right {
+  padding-right: 0;
+}
 
-.bitch-center { text-align: center; }
+.mega-hour {
+  font-size: 20px;
+}
 
-.programs h3 { margin-top: 10px; }
+.hours {
+  border-left: 1px solid #555;
+  }
 
-.programs h5 { font-weight: bold; }
+.hours:first-child {
+  border-right: 1px solid #555; border-left: none;
+}
 
-.programs-block img { width: 100%; }
-.programs-block img.half-img { width: 50%; }
+.bitch-center {
+  text-align: center;
+}
 
-.programs-tags { padding-top: 5px; }
-.badge { font-size: 10px; }
+.programs h3 {
+  margin-top: 10px;
+}
+
+.programs h5 {
+  font-weight: bold;
+}
+
+.programs-block img {
+  width: 100%;
+}
+
+.programs-block img.half-img {
+  width: 50%;
+}
+
+.programs-tags {
+   padding-top: 5px;
+}
+
+.badge {
+  font-size: 10px;
+}
 
 /*TODO Temporary Workaround for black overlay behond modal in last version of bootstrap*/
 .modal-backdrop {
