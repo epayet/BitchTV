@@ -1,4 +1,6 @@
-<div class="col-sm-6 col-md-4 col-xs-12 programs programs-block clickable" ng-click="openProgramDetailsModal()">
+<div class="col-sm-6 col-md-4 col-xs-12 programs-block clickable"
+     ng-class="{'programs-even': ($parent.$index % 2), 'display-program-info': displayInfo}"
+     ng-click="displayInfo = !displayInfo">
     <div class="col-md-4 col-sm-4 col-xs-4 programs-block-left ">
         <img ng-src="{{getProgramImgSrc()}}">
         <div class="bitch-center">{{program.date}}</div>
@@ -13,9 +15,11 @@
         <p class="text-muted"><strong>End: </strong>{{stop}}</p>-->
         </div>
         <p class="category" style="display: none">{{program.category | joinBy: ','}}</p>
-        <p class="description" style="display: none;">
-            {{program.description}}
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p class="description" style="">
+            <!--{{program.description}}-->
+            {{program.desc.text}}
         </p>
-        <!--<button class="btn btn-success btn-xs" >More info</button>
     </div>
 </div>
