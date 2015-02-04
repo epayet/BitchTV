@@ -11,6 +11,10 @@ body {
     src: url(/fonts/Raleway-Regular.otf) format("truetype");
 }
 
+body {
+    background-color: #eee;
+}
+
 .jumbotron {
     margin-bottom: 0px;
 }
@@ -28,8 +32,11 @@ hr {
 }
 
 .programs-block {
-    background-image: linear-gradient(rgb(238, 238, 238) 0, rgb(255, 255, 255) 100%);
     padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 2px 2px rgb(166, 166, 166);
+    background-color: rgb(255, 255, 255);
 }
 
 .programs-block h4 {
@@ -37,13 +44,17 @@ hr {
     text-align: center;
     font-weight: bold;
     padding: 10px;
-    border-radius: 1px;
     background-color: #624398;
+    border-radius: 5px 5px 0 0;
     margin-top: 0;
 }
 
 .programs-block-left {
     padding-left: 0;
+    padding-right: 0;
+}
+
+.programs-block-right {
     padding-right: 0;
 }
 
@@ -76,7 +87,7 @@ hr {
     font-weight: bold;
 }
 
-.programs img {
+.programs-block img {
     width: 100%;
 }
 
@@ -84,4 +95,19 @@ hr {
 /*TODO Temporary Workaround for black overlay behond modal in last version of bootstrap*/
 .modal-backdrop {
     bottom: 0;
+}
+
+p.description {
+    transition: all 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+.display-program-info > p.description {
+    transform: rotate(90deg);
+}
+
+.navbar .navbar-form{
+    padding: 0 15px;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
