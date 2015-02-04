@@ -1,5 +1,5 @@
 angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, DateUtilService) {
-    var programs;
+    var cachedPrograms;
 
     return {
         getForChannel: function(channelId, callback) {
@@ -50,13 +50,28 @@ angular.module('BitchTV').factory('ProgramService', function (ProgramsResource, 
     };
 
     function getPrograms(callback) {
-        if(!programs) {
-            ProgramsResource.query(function(_programs_) {
-                programs = _programs_;
-                callback(programs);
+        if(!cachedPrograms) {
+            ProgramsResource.query(function(programs) {
+                cachedPrograms = filterResource(programs);
+                callback(cachedPrograms);
             });
-        } else {
-            callback(programs)
+        } else
+            callback(cachedPrograms);
+
+        function filterResource(programs) {
+            var currentDate = DateUtilService.currentDate();
+            var currentTime = DateUtilService.currentTime();
+
+            var programsFilteredByDate = [];
+            for(var i=0; i<programs.length; i++) {
+                var dateNow = DateUtilService.getDayMonthYearByPrograms(programs[i].start);
+                var timeStart = DateUtilService.getHoursMinutesByPrograms(programs[i].start);
+
+                if(dateNow >= currentDate && timeStart >= currentTime) {
+                    programsFilteredByDate.push(programs[i]);
+                }
+            }
+            return programsFilteredByDate;
         }
     }
 });
