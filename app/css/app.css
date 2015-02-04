@@ -72,6 +72,8 @@ hr {
 .programs-block img { width: 100%; }
 .programs-block img.half-img { width: 50%; }
 
+.programs-tags { padding-top: 5px; }
+.badge { font-size: 10px; }
 
 /*TODO Temporary Workaround for black overlay behond modal in last version of bootstrap*/
 .modal-backdrop {
