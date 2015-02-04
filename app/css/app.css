@@ -102,12 +102,21 @@ hr {
     bottom: 0;
 }
 
-p.description {
-    transition: all 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+.description {
+    /*height: 0;*/
+    display: none;
 }
 
-.display-program-info > p.description {
-    transform: rotate(90deg);
+.display-program-info .description {
+    display: block;
+    /*transform: rotate(90deg);*/
+}
+
+.description p {
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 2px solid rgb(221, 221, 221);
+    text-align: justify;
 }
 
 .navbar .navbar-form{
@@ -115,4 +124,8 @@ p.description {
     border: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.espace {
+    margin-right: 2px;
 }
