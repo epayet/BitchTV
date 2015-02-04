@@ -37,6 +37,11 @@ angular.module('BitchTV.plugins').factory('DateUtilService', function () {
                     startTime = '20:00';
                     stopTime = '08:00';
                     break;
+                    
+                case 'today':
+                    startTime = '00:00';
+                    stopTime = '23:59';
+                    break;
             }
             return {
                 startTime: startTime,

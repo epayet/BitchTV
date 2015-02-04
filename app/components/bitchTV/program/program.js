@@ -4,6 +4,8 @@ angular.module('BitchTV').directive('bitchTvProgram', function (ProgramService, 
         templateUrl: 'components/bitchTV/program/program.html',
         scope: {program: '=', channelIcon: '@'},
         link: function(scope, element, attrs) {
+            
+            scope.displayInfo = false;
             var programDetailsModal = new ProgramDetailsModal(scope.program);
 
             scope.openProgramDetailsModal = function() {
